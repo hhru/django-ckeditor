@@ -34,12 +34,18 @@ CKEDITOR.tools.extend( CKEDITOR.dom.window.prototype,
 		 * <b>win.focus()</b>;
 		 */
 		focus : function()
-		{
-			// Webkit is sometimes failed to focus iframe, blur it first(#3835).
-			if ( CKEDITOR.env.webkit && this.$.parent )
-				this.$.parent.focus();
-			this.$.focus();
-		},
+      	{
+         if ( CKEDITOR.env.webkit && this.$.parent ) {
+            // TODO: this throws an error in CHROME! so we check if the function exists...
+            if(typeof this.$.parent.focus == 'function') {
+            this.$.parent.focus();
+            }
+         }
+         // TODO: this throws an error in FIREFOX! so we check if the function exists...
+         if(typeof this.$.focus == 'function') {
+            this.$.focus();
+         };
+      	},
 
 		/**
 		 * Gets the width and height of this window's viewable area.
