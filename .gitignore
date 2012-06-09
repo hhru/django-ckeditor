@@ -1,5 +1,24 @@
-*.egg-info
+*.log
+*.pot
 *.pyc
+local_settings.py
+
+# Emacs
+\#*\#
+*~
+
+# Debian temporary
+*.debhelper
+*.debhelper.log
+*.substvars
+debian/*/*
+debian/files
+build/*
+
+# Localisation
+*.mo
+
+*.egg-info
 *.swp
 .installed.cfg
 /bin/
@@ -7,7 +26,3 @@
 /eggs/
 /parts/
 /ckeditor.db
-
-.project
-.pydevproject
-*.jar
