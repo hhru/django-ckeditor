@@ -26,3 +26,8 @@ build/*
 /eggs/
 /parts/
 /ckeditor.db
+/dist
+
+.project
+.pydevproject
+

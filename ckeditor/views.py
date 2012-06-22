@@ -11,6 +11,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+import imghdr
 
 try:
     from PIL import Image, ImageOps
@@ -119,13 +120,15 @@ def upload(request):
 
     # Open output file in which to store upload.
     upload_filename = get_upload_filename(upload.name, request.user)
+#
+    file = default_storage.save(upload_filename, upload)
 
-    image = default_storage.save(upload_filename, upload)
-
-    create_thumbnail(image)
+    full_path = os.path.join(settings.MEDIA_ROOT, upload_filename)
+    if imghdr.what(full_path):
+        create_thumbnail(full_path)
 
     # Respond with Javascript sending ckeditor upload url.
-    url = get_media_url(image)
+    url = get_media_url(upload_filename)
     return HttpResponse("""
     <script type='text/javascript'>
         window.parent.CKEDITOR.tools.callFunction(%s, '%s');
