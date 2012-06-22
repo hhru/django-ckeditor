@@ -1,6 +1,11 @@
 Changelog
 =========
 
+3.6.2.1
+-------
+#. Remove unwanted static files from distribution.
+#. Use Pillow instead of PIL since it builds on all systems.
+
 3.6.2
 -----
 #. Include CKEditor version 3.6.2.
