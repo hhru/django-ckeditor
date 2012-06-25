@@ -91,18 +91,7 @@ def get_media_url(path):
 
 
 def get_upload_filename(upload_name, user):
-    # If CKEDITOR_RESTRICT_BY_USER is True upload file to user specific path.
-    if getattr(settings, 'CKEDITOR_RESTRICT_BY_USER', False):
-        user_path = user.username
-    else:
-        user_path = ''
-
-    # Generate date based path to put uploaded file.
-    date_path = datetime.now().strftime('%Y/%m/%d')
-
-    # Complete upload path (upload_path + date_path).
-    upload_path = os.path.join(settings.CKEDITOR_UPLOAD_PATH, user_path, \
-            date_path)
+    upload_path = settings.MEDIA_ROOT
 
     return get_available_name(os.path.join(upload_path, upload_name))
 
@@ -123,12 +112,8 @@ def upload(request):
 #
     file = default_storage.save(upload_filename, upload)
 
-    full_path = os.path.join(settings.MEDIA_ROOT, upload_filename)
-    if imghdr.what(full_path):
-        create_thumbnail(full_path)
-
     # Respond with Javascript sending ckeditor upload url.
-    url = get_media_url(upload_filename)
+    url = settings.MEDIA_URL + '/' + file
     return HttpResponse("""
     <script type='text/javascript'>
         window.parent.CKEDITOR.tools.callFunction(%s, '%s');
