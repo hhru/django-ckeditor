@@ -107,10 +107,7 @@ def upload(request):
     # Get the uploaded file from request.
     upload = request.FILES['upload']
 
-    # Open output file in which to store upload.
-    upload_filename = get_upload_filename(upload.name, request.user)
-#
-    file = default_storage.save(upload_filename, upload)
+    file = default_storage.save(upload.name, upload)
 
     # Respond with Javascript sending ckeditor upload url.
     url = settings.MEDIA_URL + '/' + file
