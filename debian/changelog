@@ -1,11 +1,11 @@
-python-django-ckeditor (3.6.3) stable; urgency=low
+python-django-ckeditor (3.6.3) unstable; urgency=low
 
   [ Anton Volozhanin ]
   * Fix for webkit-based browsers
 
  -- Alexander Tsvetkov <sickuenser@eastwood-lab.ru>  Sat, 09 Jun 2012 17:45:08 +0400
 
-python-django-ckeditor (3.6.2) stable; urgency=low
+python-django-ckeditor (3.6.2) unstable; urgency=low
 
   * Include CKEditor version 3.6.2.
   * Initial work on Django aligned theme.
