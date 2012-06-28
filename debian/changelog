@@ -1,4 +1,4 @@
-python-django-ckeditor (3.6.3) stable; urgency=low
+python-django-ckeditor (3.6.3) unstable; urgency=low
 
   [ Anton Volozhanin ]
   * Fix for webkit-based browsers
