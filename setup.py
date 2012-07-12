@@ -8,7 +8,7 @@ def get_source_files():
 
 setup(
     name='django-ckeditor',
-    version='3.6.2.1',
+    version='3.6.4-hh1',
     description='Django admin CKEditor integration.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Shaun Sephton',
@@ -16,7 +16,6 @@ setup(
     url='http://github.com/shaunsephton/django-ckeditor',
     packages = find_packages(exclude=['project',]),
     install_requires = [
-        'Pillow',
     ],
     include_package_data=True,
     exclude_package_data={
