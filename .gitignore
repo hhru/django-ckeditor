@@ -29,3 +29,7 @@ build/*
 
 .project
 .pydevproject
+/dist
+
+
+
