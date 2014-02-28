@@ -1,3 +1,10 @@
+python-django-ckeditor (3.6.4-hh2) unstable; urgency=low
+
+  [ Dmitry Makushin ]
+  * Update version after ported to django 1.6 
+
+ -- Alexander Tsvetkov <sickuenser@eastwood-lab.ru>  Fri, 28 Feb 2014 18:23:00 +0400
+
 python-django-ckeditor (3.6.4-hh1) unstable; urgency=low
 
   [ Anton Volozhanin ]
