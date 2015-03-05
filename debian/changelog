@@ -1,4 +1,4 @@
-python-django-ckeditor (3.6) unstable; urgency=low
+python-django-ckeditor (1.0.dev1) unstable; urgency=low
 
   [ Dmitry Makushin ]
   * Update version after ported to django 1.6 
